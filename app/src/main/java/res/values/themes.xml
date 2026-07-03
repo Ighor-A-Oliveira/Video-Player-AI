@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.AnimePlayer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Cor principal (Netflix Red) -->
         <item name="colorPrimary">#E50914</item>
         <item name="android:windowBackground">#000000</item>
         <item name="android:statusBarColor">#000000</item>
