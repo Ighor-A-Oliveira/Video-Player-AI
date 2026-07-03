@@ -1,17 +1,21 @@
-android {
-    namespace = "com.example.animeplayer" // ESSENCIAL: deve ser igual ao seu pacote
-    compileSdk = 34
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.2.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20")
+    }
+}
 
-    defaultConfig {
-        applicationId = "com.example.animeplayer"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
-    
-    buildFeatures {
-        viewBinding = true
-    }
-    // ... restante do código
+}
+
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
 }
