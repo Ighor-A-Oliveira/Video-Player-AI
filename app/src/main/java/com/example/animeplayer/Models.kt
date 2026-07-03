@@ -19,4 +19,4 @@ data class Season(
 data class Series(
     val name: String,
     val seasons: List<Season>
-)s
+)
