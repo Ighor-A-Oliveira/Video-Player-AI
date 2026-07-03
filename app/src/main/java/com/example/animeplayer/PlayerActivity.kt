@@ -1,5 +1,5 @@
 package com.example.animeplayer
-
+import androidx.media3.common.C
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -70,8 +70,16 @@ class PlayerActivity : AppCompatActivity() {
             .build()
     }
 
-    private fun showTrackSelector() {
-        TrackSelectionDialogBuilder(this, "Áudio e Legendas", player!!).build().show()
+   private fun showTrackSelector() {
+        // Na versão 1.3.1, precisamos especificar se queremos ver Áudio (TRACK_TYPE_AUDIO) 
+        // ou Legendas (TRACK_TYPE_TEXT). Vamos mostrar o de Áudio por padrão.
+        val dialog = TrackSelectionDialogBuilder(
+            this, 
+            "Seleção de Faixas", 
+            player!!, 
+            C.TRACK_TYPE_AUDIO // Adicionamos esse parâmetro para corrigir o erro
+        ).build()
+        dialog.show()
     }
 
     private fun startAutoPlayTimer() {
